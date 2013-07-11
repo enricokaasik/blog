@@ -13,6 +13,7 @@ class Request // objekt
 	public $controller = DEFAULT_CONTROLLER; // muutujad, nagu array-s/ klassi sees muutuja on property
 	public $action = 'index';
 	public $params = array();
+	public $post = array();
 
 	public function __construct() // funktsioon saab olla ainult klassis/ väljakutsumine: ->/ klassis ees funktsioon on meetod
 	{
@@ -28,6 +29,7 @@ class Request // objekt
 				// array_shift võtab path_infost esimese liikme ära ja tagastab selle controllerisse
 				$this->action = isset($path_info[0]) && ! empty($path_info[0]) ? array_shift($path_info) : 'index';
 				$this->params = isset($path_info[0]) ? $path_info : NULL; // parameters
+				$this->post = isset($_POST[0]) ? $_POST : array(); // parameters
 			}
 		}
 	}

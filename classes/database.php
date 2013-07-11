@@ -46,7 +46,19 @@ function get_all($sql)
     }
     return $result;
 }
-
+/**
+ * Returns the first row of a database result set as an associative array.
+ * @param $sql - The SQL statement to be executed.
+ * @return array - The first row of the result set as an associative array
+ */
+function get_first($sql)
+{
+	$q = mysql_query($sql) or db_error_out();
+	while (($result[] = mysql_fetch_assoc($q)) || array_pop($result)) {
+		;
+	}
+	return mysql_num_rows($q) ? $result[0] : NULL;
+}
 function db_error_out($sql = NULL)
 {
     $db_error = mysql_error();
