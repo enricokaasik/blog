@@ -1,5 +1,5 @@
-<script type="text/javascript" src="<?=ASSETS_URL?>js/vendor/bootstrap.js"></script>
-<script type="text/javascript" src="<?=ASSETS_URL?>js/vendor/bootstrap-prompts-alert.js"></script>
+<script type="text/javascript" src="<?=ASSETS_URL?>js\vendor\bootstrap.js"></script>
+<script type="text/javascript" src="<?=ASSETS_URL?>js\vendor\bootstrap-prompts-alert.js"></script>
 <script type="text/javascript">
 function check(){
 	if(!$('#comment_text').val()){
