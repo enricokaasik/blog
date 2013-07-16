@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Andrese blogi</title>
+	<title>Enrico blogi</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
@@ -36,7 +36,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">Andrese blogi</a>
+			<a class="brand" href="#">Enrico blogi</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="<?=BASE_URL?>posts">Postitused</a></li>
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 </div>
-<div style="padding-top: 60px">
+<div style="padding: 30px">
 	<?php
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>

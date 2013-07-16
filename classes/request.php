@@ -12,7 +12,7 @@ class Request // objekt
 
 	public $controller = DEFAULT_CONTROLLER; // muutujad, nagu array-s/ klassi sees muutuja on property
 	public $action = 'index';
-	public $params = array();
+	public $get = array();
 	public $post = array();
 
 	public function __construct() // funktsioon saab olla ainult klassis/ väljakutsumine: ->/ klassis ees funktsioon on meetod
@@ -28,13 +28,15 @@ class Request // objekt
 				$this->controller = isset($path_info[0]) ? array_shift($path_info) : DEFAULT_CONTROLLER;
 				// array_shift võtab path_infost esimese liikme ära ja tagastab selle controllerisse
 				$this->action = isset($path_info[0]) && ! empty($path_info[0]) ? array_shift($path_info) : 'index';
-				$this->params = isset($path_info[0]) ? $path_info : NULL; // parameters
-				$this->post = isset($_POST[0]) ? $_POST : array(); // parameters
+				$this->get = isset($path_info[0]) ? $path_info : NULL; // parameters
 			}
 		}
+		$this->post = $_POST; // parameters
 	}
+
 	// ümbersuunamine
-	public function redirect($destination){
+	public function redirect($destination)
+	{
 		header('Location: '.BASE_URL.$destination); // header - aadressiribale, Location: peab olema
 		// saab väärtuse kui $request->redirect(väärtus)
 	}
